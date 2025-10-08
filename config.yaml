@@ -1,0 +1,24 @@
+# team members Luke Stassinopoulos, John Watson, Cameron Gilbert, Bailey Nathan, Rhett Calnan
+#Group 101
+
+# SOCP configuration file
+
+server:
+  id: null
+  host: "127.0.0.1"
+  port: 8765 # default; we'll override for srvB via env
+  db_path: "socp.db"
+
+bootstrap_servers:
+  - id: "127.0.0.1:8870"
+    host: "127.0.0.1" # srvB
+    port: 8870
+    pubkey: "BASE64URL(RSA-4096-PUB)"
+  - id: "127.0.0.1:8765"
+    host: "127.0.0.1" # srvA
+    port: 8765
+    pubkey: "BASE64URL(RSA-4096-PUB)"
+
+logging:
+  level: "INFO"
+  file: "socp.log"
